@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.martin.basic.ui.login.LoginViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000">
+
+        <include layout="@layout/include_simple_toolbar" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guide_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <com.martin.basic.widget.LabelEditText
+            android:id="@+id/accountView"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/common_input_background"
+            android:digits="@string/password_digist"
+            android:hint="@string/hint_account"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:text="@={vm.accountField}"
+            android:textColor="@color/second_color"
+            app:labelBackground="#1e1e1e"
+            app:labelBackgroundRadius="4dp"
+            app:labelInsertSize="10dp"
+            app:labelPadding="10dp"
+            app:labelText="账号"
+            app:labelTextColor="@color/login_text_color"
+            app:labelTextSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guide_line" />
+
+
+        <com.martin.basic.widget.LabelEditText
+            android:id="@+id/passwordView"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/common_input_background"
+            android:digits="@string/password_digist"
+            android:hint="@string/hint_pwd"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:textColor="@color/second_color"
+            app:labelBackground="#1e1e1e"
+            app:labelBackgroundRadius="4dp"
+            app:labelInsertSize="10dp"
+            app:labelPadding="10dp"
+            app:labelText="密码"
+            android:text="@={vm.passwordField}"
+            app:labelTextColor="@color/login_text_color"
+            app:labelTextSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accountView" />
+
+
+        <com.martin.basic.widget.ShapeButton
+            android:id="@+id/btn_enter"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/enter"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+            app:connerRadius="4dp"
+            app:layout_constraintLeft_toLeftOf="@id/accountView"
+            app:layout_constraintRight_toRightOf="@id/accountView"
+            app:layout_constraintTop_toBottomOf="@id/passwordView"
+            android:onClick="@{vm.onEnterClick}"
+            app:pressedSolidColor="#00000000"
+            app:pressedStrokeColor="@color/second_dark_color"
+            app:shapeType="rectangle"
+            app:solidColor="#00000000"
+            app:strokeColor="@color/second_color"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/forgetView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:text="忘记密码"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+            app:layout_constraintRight_toLeftOf="@id/aboutView"
+            app:layout_constraintTop_toBottomOf="@id/btn_enter" />
+
+
+        <TextView
+            android:id="@+id/aboutView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="关于"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+            app:layout_constraintRight_toRightOf="@id/btn_enter"
+            app:layout_constraintTop_toBottomOf="@id/btn_enter" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

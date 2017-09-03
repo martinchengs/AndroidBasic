@@ -1,4 +1,4 @@
-package com.martin.basic
+package com.martin.basic.ui.main
 
 import com.martin.basic.library.app.BaseViewModel
 
@@ -7,7 +7,4 @@ import com.martin.basic.library.app.BaseViewModel
  * Hello World
  */
 class MainViewModel(view: MainView) : BaseViewModel<MainView>(view) {
-    fun requestInfo() {
-        view?.hello()
-    }
 }

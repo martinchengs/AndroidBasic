@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidBasic</string>
+    <string name="password_digist">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</string>
+    <string name="hint_pwd">6-16位数字，英文区分大小写</string>
+    <string name="hint_account">6-20位数字，英文</string>
+    <string name="enter">进入</string>
 </resources>

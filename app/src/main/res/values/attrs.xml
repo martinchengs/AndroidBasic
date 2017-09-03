@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ShapeButton">
+        <attr name="solidColor" format="color|reference" />
+        <attr name="pressedSolidColor" format="color|reference" />
+        <attr name="strokeColor" format="color|reference" />
+        <attr name="pressedStrokeColor" format="color|reference" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="connerRadius" format="dimension" />
+        <attr name="shapeType" format="enum">
+            <enum name="rectangle" value="0" />
+            <enum name="oval" value="1" />
+            <enum name="line" value="2" />
+            <enum name="ring" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="LabelEditText">
+        <attr name="labelText" format="string" />
+        <attr name="labelTextSize" format="dimension" />
+        <attr name="labelTextColor" format="color|reference" />
+        <attr name="labelBackground" format="color|reference" />
+        <attr name="labelBackgroundRadius" format="dimension" />
+        <attr name="labelPadding" format="dimension" />
+        <attr name="labelInsertSize" format="dimension" />
+    </declare-styleable>
+
+</resources>

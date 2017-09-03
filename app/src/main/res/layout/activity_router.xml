@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.martin.basic.ui.router.RouterViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <com.martin.basic.widget.ShapeButton
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:onClick="@{vm.onLoginClick}"
+            android:text="登录"
+            app:connerRadius="6dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_logging"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:pressedSolidColor="#d4ac67"
+            app:solidColor="#ffcf7d" />
+
+
+        <com.martin.basic.widget.ShapeButton
+            android:id="@+id/btn_logging"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:onClick="@{vm.onLoggingClick}"
+            android:text="注册"
+            android:textColor="#d4ac67"
+            app:connerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:pressedSolidColor="#00000000"
+            app:pressedStrokeColor="#ffcf7d"
+            app:shapeType="rectangle"
+            app:solidColor="#00000000"
+            app:strokeColor="#d4ac67"
+            app:strokeWidth="3dp" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

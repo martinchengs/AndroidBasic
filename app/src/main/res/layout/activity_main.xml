@@ -4,19 +4,19 @@
     <data>
         <variable
             name="vm"
-            type="com.martin.basic.MainViewModel"/>
+            type="com.martin.basic.ui.main.MainViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.martin.basic.MainActivity">
+        tools:context="com.martin.basic.ui.main.MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

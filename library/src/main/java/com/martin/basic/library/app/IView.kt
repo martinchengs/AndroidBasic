@@ -1,5 +1,7 @@
 package com.martin.basic.library.app
 
+import android.app.Dialog
+import android.support.v7.app.AlertDialog
 import android.widget.Toast
 
 /**
@@ -10,5 +12,7 @@ interface IView {
 
     fun showToast(message: String, length: Int = Toast.LENGTH_SHORT)
 
-    fun showLoading(message: String, cancelable: Boolean = true): ILoadingView
+    fun showLoading(message: String = "正在加载...", cancelable: Boolean = true): AlertDialog
+
+    fun hideDialog(dialog: Dialog?)
 }
