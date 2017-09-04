@@ -6,4 +6,5 @@
     <color name="second_color">#f0daab</color>
     <color name="login_text_color">#817d71</color>
     <color name="second_dark_color">#ceaf6d</color>
+    <color name="main_color">#000</color>
 </resources>

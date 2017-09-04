@@ -26,4 +26,9 @@
         <attr name="labelInsertSize" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="SimpleToolbar">
+        <attr name="pageTitle" format="string" />
+        <attr name="showNavigationIcon" format="boolean" />
+    </declare-styleable>
+
 </resources>

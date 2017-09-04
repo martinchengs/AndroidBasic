@@ -7,6 +7,8 @@ import com.martin.basic.BR
 import com.martin.basic.R
 import com.martin.basic.databinding.ActivityLoginBinding
 import com.martin.basic.library.app.BaseActivity
+import com.martin.basic.library.ex.routerTo
+import com.martin.basic.ui.about.AboutActivity
 import com.martin.basic.ui.router.LoginView
 
 /**
@@ -31,4 +33,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(), Logi
     override fun bindViewModel(): LoginViewModel = LoginViewModel(this)
 
     override fun bindLayoutId(): Int = R.layout.activity_login
+    override fun enterAboutActivity() {
+        routerTo(AboutActivity::class.java)
+    }
 }

@@ -26,6 +26,7 @@
         <activity android:name=".ui.router.RouterActivity" />
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.register.RegisterActivity" />
+        <activity android:name=".ui.about.AboutActivity" />
     </application>
 
 </manifest>

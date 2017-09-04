@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<com.martin.basic.widget.SimpleToolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="48dp"
+    android:background="@color/main_color"
     app:buttonGravity="bottom"
     app:contentInsetEnd="0dp"
     app:contentInsetLeft="0dp"
     app:contentInsetRight="0dp"
     app:contentInsetStart="0dp"
-    app:maxButtonHeight="48dp"
-    app:titleTextAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
-    app:titleTextColor="#f0daab">
-
-    <TextView
-        android:id="@+id/toolbar_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:maxLines="1"
-        android:maxWidth="300dp"
-        android:singleLine="true"
-        android:textColor="#f0daab"
-        android:textSize="16sp" />
-
-
-</android.support.v7.widget.Toolbar>
+    app:maxButtonHeight="48dp"/>
