@@ -12,6 +12,7 @@ import com.martin.basic.databinding.ActivityRouterBinding
 import com.martin.basic.library.app.BaseActivity
 import com.martin.basic.library.database.DatabaseProxy
 import com.martin.basic.library.ex.routerTo
+import com.martin.basic.library.log.LogX
 import com.martin.basic.ui.login.LoginActivity
 
 /**
@@ -33,7 +34,7 @@ class RouterActivity : BaseActivity<ActivityRouterBinding, RouterViewModel>(), R
     }
 
     override fun bindData() {
-
+    LogX.e(null)
         val proxy = Room.databaseBuilder(this, DatabaseProxy::class.java, "hh.db")
                 .addCallback(object : RoomDatabase.Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {

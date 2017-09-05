@@ -22,7 +22,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(), S
     }
 
     override fun bindData() {
-
         Handler().postDelayed({ routerTo(RouterActivity::class.java) }, 3000)
     }
 
