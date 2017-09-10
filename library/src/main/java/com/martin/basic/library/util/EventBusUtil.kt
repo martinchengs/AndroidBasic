@@ -1,7 +1,6 @@
 package com.martin.basic.library.util
 
-import com.martin.basic.library.app.BaseViewModel
-import com.martin.basic.library.app.IViewMode
+import com.martin.basic.library.app.UseEventBus
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -12,15 +11,15 @@ object EventBusUtil {
 
     fun isRegistered(any: Any?): Boolean = EventBus.getDefault().isRegistered(any)
 
-    fun <T : IViewMode> register(viewModel: T) {
-        if (isRegistered(viewModel).not() && viewModel.useEventBus()) {
-            EventBus.getDefault().register(viewModel)
+    fun <T : UseEventBus> register(useEventBus: T) {
+        if (isRegistered(useEventBus).not() && useEventBus.useEventBus()) {
+            EventBus.getDefault().register(useEventBus)
         }
     }
 
-    fun <T : IViewMode> unregister(viewModel: T) {
-        if (isRegistered(viewModel) && viewModel.useEventBus()) {
-            EventBus.getDefault().unregister(viewModel)
+    fun <T : UseEventBus> unregister(useEventBus: T) {
+        if (isRegistered(useEventBus) && useEventBus.useEventBus()) {
+            EventBus.getDefault().unregister(useEventBus)
         }
     }
 }

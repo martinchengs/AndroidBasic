@@ -33,7 +33,4 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(), Logi
     override fun bindViewModel(): LoginViewModel = LoginViewModel(this)
 
     override fun bindLayoutId(): Int = R.layout.activity_login
-    override fun enterAboutActivity() {
-        routerTo(AboutActivity::class.java)
-    }
 }

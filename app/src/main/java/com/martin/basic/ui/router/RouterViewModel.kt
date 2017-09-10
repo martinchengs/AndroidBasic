@@ -1,9 +1,7 @@
 package com.martin.basic.ui.router
 
-import android.content.Intent
 import android.view.View
 import com.martin.basic.library.app.BaseViewModel
-import com.martin.basic.ui.login.LoginActivity
 
 /**
  * Created by Martin on 2017/8/20.

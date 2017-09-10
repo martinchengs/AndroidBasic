@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/maintab_found_normal"
+        android:title="首页"
+        app:showAsAction="always|always" />
+    <item
+        android:id="@+id/menu_video"
+        android:icon="@drawable/maintab_crunchies_normal"
+        android:title="播播"
+        app:showAsAction="always|always" />
+    <item
+        android:id="@+id/menu_message"
+        android:icon="@drawable/maintab_info_normal"
+        android:title="消息"
+        app:showAsAction="always|always" />
+    <!--<item-->
+    <!--android:id="@+id/menu_person"-->
+    <!--android:icon="@drawable/maintab_myself_normal"-->
+    <!--android:title="我的"-->
+    <!--app:showAsAction="always|always" />-->
+</menu>

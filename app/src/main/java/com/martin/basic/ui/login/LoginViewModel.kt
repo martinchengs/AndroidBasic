@@ -1,10 +1,13 @@
 package com.martin.basic.ui.login
 
-import android.databinding.BindingConversion
 import android.databinding.ObservableField
 import android.view.View
 import com.martin.basic.library.app.BaseViewModel
+import com.martin.basic.ui.about.AboutActivity
+import com.martin.basic.ui.main.MainActivity
 import com.martin.basic.ui.router.LoginView
+import io.reactivex.Observable
+import io.reactivex.ObservableOnSubscribe
 
 /**
  * Created by Martin on 2017/8/21.
@@ -19,10 +22,10 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     }
 
     fun onEnterClick(view: View) {
-        this.view?.showToast("${accountField.get()}    ${passwordField.get()}")
+        this.view?.simpleTo(MainActivity::class.java)
     }
 
-    fun onAboutClick(view:View) {
-        this.view?.enterAboutActivity()
+    fun onAboutClick(view: View) {
+        this.view?.simpleTo(AboutActivity::class.java)
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.design.widget.TabLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/tabLayoutSize"
+    android:layout_gravity="center"
+    app:tabGravity="center"
+    app:tabIndicatorColor="@color/second_color"
+    app:tabIndicatorHeight="1dp"
+    app:tabMode="fixed"
+    app:tabSelectedTextColor="@color/second_dark_color"
+    app:tabTextColor="@color/second_color"
+    tools:showIn="@layout/fragment_home">
+
+
+    <android.support.design.widget.TabItem
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发现" />
+
+
+    <android.support.design.widget.TabItem
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关注" />
+
+    <android.support.design.widget.TabItem
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="排行榜" />
+</android.support.design.widget.TabLayout>

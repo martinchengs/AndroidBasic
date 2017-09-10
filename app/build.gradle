@@ -37,6 +37,7 @@ dependencies {
     //最新版本
     kapt 'com.android.databinding:compiler:2.3.0'
     implementation project(':bmob')
+    implementation 'com.android.support:design:26.0.2'
 }
 repositories {
     mavenCentral()

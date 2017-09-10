@@ -7,5 +7,4 @@ import com.martin.basic.library.app.IView
  * Hello World
  */
 interface LoginView : IView {
-    fun enterAboutActivity()
 }
