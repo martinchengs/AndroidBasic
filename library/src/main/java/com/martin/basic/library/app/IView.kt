@@ -1,7 +1,9 @@
 package com.martin.basic.library.app
 
+import android.app.Activity
 import android.app.Dialog
 import android.support.v7.app.AlertDialog
+import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 
 /**
@@ -15,4 +17,6 @@ interface IView {
     fun showLoading(message: String = "正在加载...", cancelable: Boolean = true): AlertDialog
 
     fun hideDialog(dialog: Dialog?)
+
+    fun <T : Activity> simpleTo(clazz: Class<T>)
 }

@@ -1,5 +1,6 @@
 package com.martin.basic.library.app
 
+import android.app.Activity
 import android.app.Dialog
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
@@ -8,16 +9,16 @@ import android.support.annotation.CallSuper
 import android.support.annotation.LayoutRes
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.widget.Toast
 import com.martin.basic.library.R
+import com.martin.basic.library.ex.routerTo
 import com.martin.basic.library.util.DialogUtil
 
 /**
  * Created by Martin on 2017/8/13.
  * Hello World
  */
-abstract class BaseActivity<B : ViewDataBinding, VM : IViewMode> : AppCompatActivity(), IView {
+abstract class BaseActivity<B : ViewDataBinding, VM : IViewModel> : AppCompatActivity(), IView {
 
     lateinit var binding: B
     lateinit var vm: VM
@@ -30,7 +31,7 @@ abstract class BaseActivity<B : ViewDataBinding, VM : IViewMode> : AppCompatActi
         binding = DataBindingUtil.setContentView<B>(this, bindLayoutId())
         vm = bindViewModel()
         binding.setVariable(getVmId(), vm)
-        vm.onCreate(savedInstanceState)
+        vm.onAttach()
         bindToolbar()
         bindView()
         bindData()
@@ -72,6 +73,10 @@ abstract class BaseActivity<B : ViewDataBinding, VM : IViewMode> : AppCompatActi
         }
     }
 
+    override fun <T : Activity> simpleTo(clazz: Class<T>) {
+        routerTo(clazz)
+    }
+
     override fun showLoading(message: String, cancelable: Boolean): AlertDialog {
         return DialogUtil.showLoadingDialog(this, message, cancelable)
     }
@@ -81,7 +86,7 @@ abstract class BaseActivity<B : ViewDataBinding, VM : IViewMode> : AppCompatActi
     }
 
     override fun onDestroy() {
-        vm.onDestroy()
+        vm.onDeAttach()
         super.onDestroy()
     }
 }
