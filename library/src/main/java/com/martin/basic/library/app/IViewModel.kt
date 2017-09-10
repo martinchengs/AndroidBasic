@@ -11,6 +11,7 @@ import io.reactivex.disposables.Disposable
 interface IViewModel {
     fun onAttach()
     fun onDeAttach()
-    fun addDisposable(tag: String? = null, disposable: Disposable)
-    fun removeDisposable(tag: String)
+    fun addDisposable(tag: String = "Default", disposable: Disposable)
+    fun removeDisposable(tag: String="Default")
+    fun clearDisposable()
 }

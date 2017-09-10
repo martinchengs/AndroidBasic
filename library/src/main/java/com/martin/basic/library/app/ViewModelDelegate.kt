@@ -3,12 +3,18 @@ package com.martin.basic.library.app
 import com.martin.basic.library.util.EventBusUtil
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+
 class ViewModelDelegate : IViewModel, UseEventBus {
+
+
     private val mDisposables: CompositeDisposable by lazy {
         CompositeDisposable()
     }
-    private val mDisposablesMap: HashMap<String, Disposable> by lazy {
-        HashMap<String, Disposable>()
+    private val mDisposablesMap: MutableMap<String, MutableList<Disposable>>  by lazy {
+        HashMap<String, MutableList<Disposable>>()
     }
 
     override fun onAttach() {
@@ -19,17 +25,26 @@ class ViewModelDelegate : IViewModel, UseEventBus {
         EventBusUtil.unregister(this)
     }
 
-    override fun addDisposable(tag: String?, disposable: Disposable) {
+    override fun addDisposable(tag: String, disposable: Disposable) {
         mDisposables.add(disposable)
-        tag?.let { mDisposablesMap.put(tag, disposable) }
+        val disposes = mDisposablesMap.getOrDefault(tag, mutableListOf())
+        disposes.add(disposable)
     }
 
     override fun removeDisposable(tag: String) {
-        mDisposablesMap[tag]?.dispose()
-        val disposable = mDisposablesMap[tag]
-        disposable?.let {
-            mDisposables.remove(disposable)
-            mDisposablesMap.remove(tag)
+        val list = mDisposablesMap[tag]
+        val listIterator = list?.listIterator()
+        if (listIterator != null) {
+            while (listIterator.hasNext()) {
+                val next = listIterator.next()
+                mDisposables.remove(next)
+            }
         }
+        mDisposablesMap.remove(tag)
+    }
+
+    override fun clearDisposable() {
+        mDisposablesMap.clear()
+        mDisposables.clear()
     }
 }
