@@ -2,7 +2,7 @@ package com.martin.basic.library.log
 
 import android.support.annotation.IntDef
 import android.util.Log
-import com.martin.common.util.HSON
+import com.martin.basic.library.util.HSON
 import java.text.Format
 import java.text.SimpleDateFormat
 import java.util.*

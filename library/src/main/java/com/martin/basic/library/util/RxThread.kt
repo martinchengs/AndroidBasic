@@ -1,4 +1,4 @@
-package com.martin.common.util
+package com.martin.basic.library.util
 
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers

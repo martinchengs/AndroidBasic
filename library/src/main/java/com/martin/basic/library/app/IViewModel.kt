@@ -1,7 +1,5 @@
 package com.martin.basic.library.app
 
-import android.os.Bundle
-import android.widget.Toast
 import io.reactivex.disposables.Disposable
 
 /**

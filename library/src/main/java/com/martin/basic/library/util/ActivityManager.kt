@@ -1,4 +1,4 @@
-package com.martin.common.util
+package com.martin.basic.library.util
 
 import android.app.Activity
 import android.app.Application

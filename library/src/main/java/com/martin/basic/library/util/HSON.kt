@@ -1,4 +1,4 @@
-package com.martin.common.util
+package com.martin.basic.library.util
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

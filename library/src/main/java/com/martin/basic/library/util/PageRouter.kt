@@ -1,9 +1,6 @@
-package com.martin.common.util
+package com.martin.basic.library.util
 
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.Fragment
-import android.app.FragmentTransaction
 import android.content.Context
 import android.content.Intent
 import android.support.annotation.IdRes

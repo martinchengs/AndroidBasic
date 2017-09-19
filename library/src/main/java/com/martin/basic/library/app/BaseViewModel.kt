@@ -1,7 +1,5 @@
 package com.martin.basic.library.app
 
-import com.martin.basic.library.util.EventBusUtil
-
 /**
  * Created by Martin on 2017/9/10.
  * Hello World

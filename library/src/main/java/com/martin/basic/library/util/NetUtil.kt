@@ -1,4 +1,4 @@
-package com.martin.common.util
+package com.martin.basic.library.util
 
 import android.content.Context
 import android.net.ConnectivityManager

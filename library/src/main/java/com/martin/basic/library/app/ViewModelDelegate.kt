@@ -3,9 +3,6 @@ package com.martin.basic.library.app
 import com.martin.basic.library.util.EventBusUtil
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 class ViewModelDelegate : IViewModel, UseEventBus {
 
