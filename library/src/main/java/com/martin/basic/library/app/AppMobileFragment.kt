@@ -26,16 +26,17 @@ import com.martin.basic.library.util.DialogUtil
  * at 2017/9/24 23:22
  */
 abstract class AppMobileFragment : Fragment(), IView {
-    private var mToolbar: ToolbarWrapper? = null
-    private var toast: Toast? = null
-    private var mContext: Context? = null
-    private var mContentView: View? = null
+    var mToolbar: ToolbarWrapper? = null
+    var mContext: Context? = null
+    var mContentView: View? = null
+    var mActivity: AppMobileActivity? = null
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
         this.mContext = context
         if (context is AppMobileActivity) {
-            mToolbar = context.getToolbar()
+            mActivity = context
+            mToolbar = mActivity?.getToolbar()
         }
     }
 
@@ -83,13 +84,7 @@ abstract class AppMobileFragment : Fragment(), IView {
 
 
     override fun showToast(message: String, length: Int) {
-        if (toast == null) {
-            toast = Toast.makeText(mContext, message, length)
-            toast?.show()
-        } else {
-            toast?.setText(message)
-            toast?.show()
-        }
+        mActivity?.showToast(message, length)
     }
 
     override fun <T : Activity> simpleTo(clazz: Class<T>) {
@@ -101,10 +96,10 @@ abstract class AppMobileFragment : Fragment(), IView {
     }
 
     override fun showLoading(message: String, cancelable: Boolean): AlertDialog {
-        return DialogUtil.showLoadingDialog(mContext!!, message, cancelable)
+        return mActivity?.showLoading(message, cancelable)!!
     }
 
     override fun hideDialog(dialog: Dialog?) {
-        DialogUtil.hide(dialog)
+        mActivity?.hideDialog(dialog)
     }
 }
