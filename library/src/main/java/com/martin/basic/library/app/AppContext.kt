@@ -91,34 +91,42 @@ class AppContext private constructor(@NotNull private val context: Context) {
             Toast.makeText(getContext(), res, length).show()
         }
 
+        @CheckResult
         fun isMainThread(): Boolean {
             return Looper.myLooper() == Looper.getMainLooper()
         }
 
+        @CheckResult
         fun getScreenWidth(): Int {
             return UIUtil.screenW(getContext())
         }
 
+        @CheckResult
         fun getScreenHeight(): Int {
             return UIUtil.screenH(getContext())
         }
 
+        @CheckResult
         fun getScreenSize(): IntArray {
             return UIUtil.getScreenSize(getContext())
         }
 
+        @CheckResult
         fun getAppName(): String {
             return getContext().applicationInfo.loadLabel(getContext().packageManager).toString()
         }
 
+        @CheckResult
         fun getAppIcon(): Drawable {
             return getContext().applicationInfo.loadIcon(getContext().packageManager)
         }
 
+        @CheckResult
         fun getVersionCode(): Int {
             return getContext().packageManager.getPackageInfo(getContext().packageName, 0).versionCode
         }
 
+        @CheckResult
         fun getVersionName(): String {
             return getContext().packageManager.getPackageInfo(getContext().packageName, 0).versionName
         }
