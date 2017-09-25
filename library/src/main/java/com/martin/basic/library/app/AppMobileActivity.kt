@@ -24,11 +24,13 @@ import com.martin.basic.library.util.DialogUtil
  * at 2017/9/24 23:22
  */
 abstract class AppMobileActivity : AppCompatActivity(), IView {
-    private var mToolbar: ToolbarWrapper? = null
+    var mToolbar: ToolbarWrapper? = null
     private var toast: Toast? = null
+    lateinit var mActivity: AppMobileActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.mActivity = this
         if (dispatchOnCreate(savedInstanceState)) return
         beforeSetContentView(savedInstanceState)
         bindContentView()
