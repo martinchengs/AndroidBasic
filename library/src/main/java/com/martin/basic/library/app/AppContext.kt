@@ -136,6 +136,20 @@ class AppContext private constructor(@NotNull private val context: Context) {
         fun <T> getSystemService(@NonNull serviceName: String): T {
             return getContext().getSystemService(serviceName) as T
         }
+
+        private var lastPressedTime: Long = 0L
+        fun onDoubleClickBackPressed(activity: AppMobileActivity, exitAction: () -> Unit = {}): Boolean = bb@ when {
+            System.currentTimeMillis() - lastPressedTime > 3000L -> {
+                activity.showToast("再按一次退出应用")
+                lastPressedTime = System.currentTimeMillis()
+                return@bb false
+            }
+            else -> {
+                activity.parent.onBackPressed()
+                exitAction()
+                return@bb true
+            }
+        }
     }
 
     fun post(run: Runnable) {

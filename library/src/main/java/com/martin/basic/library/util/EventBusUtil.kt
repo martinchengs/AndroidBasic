@@ -9,7 +9,7 @@ import org.greenrobot.eventbus.EventBus
  */
 object EventBusUtil {
 
-    fun isRegistered(any: Any?): Boolean = EventBus.getDefault().isRegistered(any)
+    private fun isRegistered(any: Any?): Boolean = EventBus.getDefault().isRegistered(any)
 
     fun <T : UseEventBus> register(useEventBus: T) {
         if (isRegistered(useEventBus).not() && useEventBus.useEventBus()) {

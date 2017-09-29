@@ -24,7 +24,7 @@ import com.martin.basic.library.util.DialogUtil
  * at 2017/9/24 23:22
  */
 abstract class AppMobileActivity : AppCompatActivity(), IView {
-    var mToolbar: ToolbarWrapper? = null
+    private var mToolbar: ToolbarWrapper? = null
     private var toast: Toast? = null
     lateinit var mActivity: AppMobileActivity
 
@@ -53,7 +53,6 @@ abstract class AppMobileActivity : AppCompatActivity(), IView {
     }
 
     protected open fun afterBindContentView() {
-
     }
 
     protected open fun bindStatusBar() {
