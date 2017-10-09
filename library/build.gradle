@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion Integer.parseInt("$targetVersion")
-    buildToolsVersion "$sdk_tools_version"
+    buildToolsVersion '26.0.2'
 
 
     defaultConfig {

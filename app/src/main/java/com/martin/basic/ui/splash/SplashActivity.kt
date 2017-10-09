@@ -1,6 +1,8 @@
 package com.martin.basic.ui.splash
 
 import android.os.Handler
+import android.support.design.widget.BottomNavigationView
+import android.support.v7.view.menu.MenuBuilder
 import com.martin.basic.BR
 import com.martin.basic.R
 import com.martin.basic.databinding.ActivitySplashBinding
@@ -19,6 +21,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(), S
     }
 
     override fun bindEvent() {
+        val menu:MenuBuilder
     }
 
     override fun bindData() {

@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion Integer.parseInt("$targetVersion")
-    buildToolsVersion "$sdk_tools_version"
+    buildToolsVersion '26.0.2'
 
     useLibrary 'org.apache.http.legacy'
     defaultConfig {

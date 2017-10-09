@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UIBottomNavigationBar">
+        <attr name="navigationMenu" format="reference|integer" />
+        <attr name="navigationTextSize" format="dimension|reference" />
+        <attr name="navigationTextColor" format="color|reference" />
+        <attr name="navigationIcon" format="reference" />
+        <attr name="singleNavigationIconSize" format="dimension|reference" />
+        <attr name="navigationDotStyle">
+            <enum name="circle" value="0" />
+            <enum name="text" value="1" />
+        </attr>
+        <attr name="navigationDotWidth" format="dimension|reference" />
+        <attr name="navigationDotHeight" format="dimension|reference" />
+        <attr name="navigationDotBackground" format="reference" />
+    </declare-styleable>
+</resources>

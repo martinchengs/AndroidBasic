@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu1"
+        android:title="首页"
+        android:icon="@android:drawable/ic_lock_lock"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/menu2"
+        android:title="游戏"
+        android:icon="@android:drawable/ic_media_ff"
+        android:visible="true"
+        app:showAsAction="always"
+        />
+
+    <item android:id="@+id/menu3"
+        android:title="红人"
+        android:icon="@android:drawable/ic_lock_lock"
+        app:showAsAction="always"
+        />
+
+    <item android:id="@+id/menu4"
+        android:title="我的"
+        android:icon="@android:drawable/ic_delete"
+        app:showAsAction="always"
+        />
+</menu>

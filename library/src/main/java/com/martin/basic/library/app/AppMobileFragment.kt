@@ -50,6 +50,7 @@ abstract class AppMobileFragment : Fragment(), IView {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        afterViewCreated()
         bindStatusBar(view)
         bindToolbar(view)
         bindView(view)
@@ -57,11 +58,13 @@ abstract class AppMobileFragment : Fragment(), IView {
         bindEvent()
     }
 
+    open fun afterViewCreated() {
+
+    }
+
     protected open fun bindContentView(inflater: LayoutInflater?, parent: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(bindContentViewId(), parent, false)
     }
-
-    abstract fun bindContentViewId(): Int
 
     protected open fun bindStatusBar(view: View?) {
 
@@ -70,6 +73,8 @@ abstract class AppMobileFragment : Fragment(), IView {
     protected open fun bindToolbar(view: View?) {
 
     }
+
+    abstract fun bindContentViewId(): Int
 
     abstract fun bindView(view: View?)
 

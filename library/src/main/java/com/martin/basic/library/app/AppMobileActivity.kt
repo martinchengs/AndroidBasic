@@ -70,13 +70,13 @@ abstract class AppMobileActivity : AppCompatActivity(), IView {
         }
     }
 
+    abstract fun bindContentViewId(): Int
+
     abstract fun bindView()
 
     abstract fun bindData()
 
     abstract fun bindEvent()
-
-    abstract fun bindContentViewId(): Int
 
 
     override fun showToast(message: String, length: Int) {
