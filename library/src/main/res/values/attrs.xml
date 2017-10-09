@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <declare-styleable name="SimpleToolbar">
+        <attr name="pageTitle" format="string" />
+        <attr name="showNavigationIcon" format="boolean" />
+    </declare-styleable>
+
     <declare-styleable name="UIBottomNavigationBar">
         <attr name="navigationMenu" format="reference|integer" />
         <attr name="navigationTextSize" format="dimension|reference" />
         <attr name="navigationTextColor" format="color|reference" />
-        <attr name="navigationIcon" format="reference" />
         <attr name="singleNavigationIconSize" format="dimension|reference" />
         <attr name="navigationDotStyle">
             <enum name="circle" value="0" />
@@ -13,5 +18,7 @@
         <attr name="navigationDotWidth" format="dimension|reference" />
         <attr name="navigationDotHeight" format="dimension|reference" />
         <attr name="navigationDotBackground" format="reference" />
+        <attr name="navigationDotVerticalBias" format="float" />
+        <attr name="navigationDotHorizontalBias" format="float" />
     </declare-styleable>
 </resources>

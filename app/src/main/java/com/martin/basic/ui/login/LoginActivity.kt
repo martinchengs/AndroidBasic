@@ -3,6 +3,8 @@ package com.martin.basic.ui.login
 import android.databinding.Observable
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.support.design.internal.BottomNavigationItemView
+import android.support.design.widget.BottomNavigationView
 import com.martin.basic.BR
 import com.martin.basic.R
 import com.martin.basic.databinding.ActivityLoginBinding
@@ -19,7 +21,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(), Logi
     override fun getVmId(): Int = BR.vm
 
     override fun bindEvent() {
-
     }
 
     override fun bindData() {

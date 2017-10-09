@@ -3,5 +3,6 @@
     <color name="color_common_loading">#9c000000</color>
     <color name="color_common_loading_progress">#f1f1f1</color>
     <color name="color_common_loading_text">#f1f1f1</color>
+    <color name="second_color">#f0daab</color>
     <color name="toolbarTextColor">#f0daab</color>
 </resources>

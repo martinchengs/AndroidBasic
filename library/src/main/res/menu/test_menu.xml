@@ -31,5 +31,15 @@
         android:title="我的"
         android:icon="@android:drawable/ic_delete"
         app:showAsAction="always"
+
+
+        />
+
+    <item android:id="@+id/menu5"
+        android:title="我的"
+        android:icon="@android:drawable/ic_delete"
+        app:showAsAction="always"
+
+
         />
 </menu>
