@@ -2,20 +2,20 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <com.martin.basic.library.widget.navigation.UIBottomNavigationBar
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
         android:background="#918b8b"
-        app:navigationDotHeight="16dp"
-        app:navigationDotHorizontalBias="0"
-        app:singleNavigationIconSize="80dp"
-        android:clipChildren="false"
-        app:navigationDotStyle="circle"
+        app:navigationDotHeight="12dp"
+        app:navigationDotHorizontalBias="0.1"
+        app:navigationDotStyle="text"
+        app:navigationVerticalChainStyle="spread"
         app:navigationDotVerticalBias="0.6"
-        app:navigationDotWidth="22dp"
+        app:navigationDotWidth="28dp"
         app:navigationMenu="@menu/test_menu"
         app:navigationTextColor="@color/second_color"
-        app:navigationTextSize="22sp" />
+        app:navigationTextSize="12sp" />
 </FrameLayout>

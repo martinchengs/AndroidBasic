@@ -14,6 +14,7 @@ import android.graphics.drawable.Drawable
 import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.shapes.RoundRectShape
 import android.graphics.drawable.shapes.Shape
+import android.support.annotation.IntRange
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.Guideline
 import android.support.v4.content.ContextCompat
@@ -35,6 +36,7 @@ internal class UIBottomNavigationItemView(context: Context?) : ConstraintLayout(
     private var dotView: TextView
     private var guidelineH: Guideline
     private var guidelineV: Guideline
+    private var itemIndex: Int = 0
 
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_ui_bottom_navigation_bar_cell, this)
@@ -45,7 +47,7 @@ internal class UIBottomNavigationItemView(context: Context?) : ConstraintLayout(
         guidelineV = findViewById<Guideline>(R.id.guideline_vertical)
     }
 
-    fun initilize(item: MenuItem): Unit {
+    fun initialize(item: MenuItem): Unit {
         val icon = item.icon
         imageView.setImageDrawable(icon)
         textView.text = item.title
@@ -57,11 +59,10 @@ internal class UIBottomNavigationItemView(context: Context?) : ConstraintLayout(
         if (size <= 2) return
         val c = size / 2
         if (c != index) return
-        val lp = imageView.layoutParams
+        val lp = imageView.layoutParams as ConstraintLayout.LayoutParams
         lp.width = singleIconSize
         lp.height = singleIconSize
         imageView.layoutParams = lp
-
         removeView(textView)
     }
 
@@ -69,8 +70,21 @@ internal class UIBottomNavigationItemView(context: Context?) : ConstraintLayout(
         textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize.toFloat())
     }
 
+    fun setItemIndex(index: Int) {
+        this.itemIndex = index
+    }
+
+    fun getItemIndex() = itemIndex
+
+
     fun setItemTextColor(textColor: Int) {
         textView.setTextColor(textColor)
+    }
+
+    fun setItemChainStyle(style: Int) {
+        val lp = imageView.layoutParams as ConstraintLayout.LayoutParams
+        lp.verticalChainStyle = style
+        imageView.layoutParams = lp
     }
 
     fun setVerticalGuidelinePercent(navigationDotVerticalBias: Float) {
@@ -85,8 +99,8 @@ internal class UIBottomNavigationItemView(context: Context?) : ConstraintLayout(
         guidelineH.layoutParams = lp
     }
 
-    fun setDotApperance(dotStyle: Int, dotWidth: Int, dotHeight: Int, dotBackground: Drawable?) {
-        val lp = dotView.layoutParams
+    fun setDotAppearance(dotStyle: Int, dotWidth: Int, dotHeight: Int, dotBackground: Drawable?) {
+        val lp = dotView.layoutParams as ConstraintLayout.LayoutParams
         when {
             dotBackground != null -> {
                 dotView.background = dotBackground

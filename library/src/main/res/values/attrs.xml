@@ -20,5 +20,10 @@
         <attr name="navigationDotBackground" format="reference" />
         <attr name="navigationDotVerticalBias" format="float" />
         <attr name="navigationDotHorizontalBias" format="float" />
+        <attr name="navigationVerticalChainStyle" format="enum">
+            <enum name="spread" value="0"/>
+            <enum name="spread_inside" value="1"/>
+            <enum name="packed" value="2"/>
+        </attr>
     </declare-styleable>
 </resources>

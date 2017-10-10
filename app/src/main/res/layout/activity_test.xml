@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.martin.basic.ui.TestActivity">
+
+    <com.martin.basic.library.widget.navigation.UIBottomNavigationBar
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:layout_gravity="bottom"
+        android:background="#918b8b"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:navigationDotHeight="12dp"
+        app:navigationDotHorizontalBias="0.1"
+        app:navigationDotStyle="text"
+        app:navigationDotVerticalBias="0.6"
+        app:navigationDotWidth="28dp"
+        app:navigationMenu="@menu/test_menu"
+        app:navigationTextColor="@color/bottom_navigation_text_tint"
+        app:navigationTextSize="12sp"
+        app:navigationVerticalChainStyle="packed" />
+</android.support.constraint.ConstraintLayout>

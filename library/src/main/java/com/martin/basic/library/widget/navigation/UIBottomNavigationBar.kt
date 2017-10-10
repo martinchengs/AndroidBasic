@@ -8,27 +8,25 @@
 
 package com.martin.basic.library.widget.navigation
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.Drawable
-import android.support.constraint.Guideline
+import android.support.annotation.RestrictTo
 import android.support.v4.util.Pools
 import android.support.v7.view.SupportMenuInflater
 import android.support.v7.view.menu.MenuBuilder
 import android.support.v7.widget.TintTypedArray
 import android.util.AttributeSet
-import android.util.SparseArray
-import android.view.Gravity
-import android.view.MenuInflater
-import android.view.View
-import android.widget.ImageView
+import android.view.*
 import android.widget.LinearLayout
-import android.widget.TextView
 import com.martin.basic.library.R
+import com.martin.basic.library.log.LogX
 
 /**
  *
  */
+@SuppressLint("RestrictedApi")
 class UIBottomNavigationBar : LinearLayout {
     private val mMenu: MenuBuilder
     private var textSize: Int = 0
@@ -40,17 +38,22 @@ class UIBottomNavigationBar : LinearLayout {
     private var dotHeight: Int
     private var navigationDotVerticalBias: Float
     private var navigationDotHorizontalBias: Float
-    private val lp:LinearLayout.LayoutParams = LinearLayout.LayoutParams(0,LayoutParams.WRAP_CONTENT,1.0f)
+    private var chainStyle: Int = 0
+    private val lp: LinearLayout.LayoutParams = LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1.0f)
     private val mMenuInflater: MenuInflater by lazy {
         SupportMenuInflater(context)
     }
+    private val onChildViewClick: OnClickListener
+    private var onItemClickListener: ((index: Int) -> Unit)? = null
     private var mButtons: Array<UIBottomNavigationItemView?>? = null
-    private val mPools = Pools.SynchronizedPool<UIBottomNavigationItemView>(5)
 
+
+    private val mPools = Pools.SynchronizedPool<UIBottomNavigationItemView>(5)
 
     constructor(context: Context?) : this(context, null)
 
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
+
 
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         //set ViewGroup attrs
@@ -58,7 +61,7 @@ class UIBottomNavigationBar : LinearLayout {
         gravity = Gravity.CENTER_VERTICAL
 
         mMenu = MenuBuilder(context)
-        val a = TintTypedArray.obtainStyledAttributes(context, attrs, R.styleable.UIBottomNavigationBar)
+        val a = context!!.obtainStyledAttributes(attrs, R.styleable.UIBottomNavigationBar)
 
         textSize = a.getDimensionPixelSize(R.styleable.UIBottomNavigationBar_navigationTextSize, 14)
         textColor = a.getColor(R.styleable.UIBottomNavigationBar_navigationTextColor, Color.BLACK)
@@ -66,6 +69,7 @@ class UIBottomNavigationBar : LinearLayout {
             singleIconSize = a.getDimensionPixelSize(R.styleable.UIBottomNavigationBar_singleNavigationIconSize, 0)
         }
         dotStyle = a.getInt(R.styleable.UIBottomNavigationBar_navigationDotStyle, 0)
+        chainStyle = a.getInt(R.styleable.UIBottomNavigationBar_navigationVerticalChainStyle, 0)
         dotWidth = a.getDimensionPixelSize(R.styleable.UIBottomNavigationBar_navigationDotWidth, 92)
         dotHeight = a.getDimensionPixelSize(R.styleable.UIBottomNavigationBar_navigationDotHeight, 32)
         dotBackground = a.getDrawable(R.styleable.UIBottomNavigationBar_navigationDotBackground)
@@ -78,6 +82,12 @@ class UIBottomNavigationBar : LinearLayout {
             throw IllegalArgumentException("the attribute app:navigationMenu must be set") as Throwable
         }
         a.recycle()
+
+        onChildViewClick = View.OnClickListener {
+            it as UIBottomNavigationItemView
+            val index = it.getItemIndex()
+            onItemClickListener?.invoke(index)
+        }
     }
 
     private fun inflateNavigationMenu(menuResId: Int) {
@@ -105,13 +115,19 @@ class UIBottomNavigationBar : LinearLayout {
             childView.setSingleImageSize(i, mMenu.size(), singleIconSize)
             childView.setItemTextSize(textSize)
             childView.setItemTextColor(textColor)
+            childView.setItemChainStyle(chainStyle)
             childView.setVerticalGuidelinePercent(navigationDotVerticalBias)
             childView.setHorizontalGuidelinePercent(navigationDotHorizontalBias)
-            childView.setDotApperance(dotStyle, dotWidth, dotHeight, dotBackground)
-            childView.initilize(mMenu.getItem(i))
-            lp.gravity = Gravity.CENTER
-            childView.layoutParams=lp
+            childView.setDotAppearance(dotStyle, dotWidth, dotHeight, dotBackground)
+            childView.initialize(mMenu.getItem(i))
+            childView.setItemIndex(i)
+            childView.layoutParams = lp
+            childView.setOnClickListener(onChildViewClick)
             addView(childView)
         }
+    }
+
+    fun setOnItemClickListener(listener: (index:Int)->Unit) {
+        this.onItemClickListener = listener
     }
 }
