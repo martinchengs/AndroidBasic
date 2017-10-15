@@ -8,11 +8,12 @@
 
 package com.martin.basic.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v7.app.AppCompatActivity
 import com.martin.basic.R
 import com.martin.basic.library.app.AppContext
+import com.martin.basic.library.widget.navigation.OnItemClickListener
 import com.martin.basic.library.widget.navigation.UIBottomNavigationBar
 
 class TestActivity : AppCompatActivity() {
@@ -20,10 +21,13 @@ class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
+
         AppContext.init(this)
         findViewById<UIBottomNavigationBar>(R.id.bottomNavigationBar)
-                .setOnItemClickListener({
-                    AppContext.toast("the index = " + it)
+                .setOnItemClickListener(object : OnItemClickListener {
+                    override fun onItemClick(index: Int) {
+                        AppContext.toast("this index is " + index)
+                    }
                 })
     }
 }

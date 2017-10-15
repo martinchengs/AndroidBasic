@@ -9,6 +9,7 @@
 package com.martin.basic.library.widget.navigation
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.ShapeDrawable
@@ -39,6 +40,7 @@ internal class UIBottomNavigationItemView(context: Context?) : ConstraintLayout(
     private var itemIndex: Int = 0
 
     init {
+        isClickable = true
         LayoutInflater.from(context).inflate(R.layout.layout_ui_bottom_navigation_bar_cell, this)
         imageView = findViewById<ImageView>(R.id.image)
         textView = findViewById<TextView>(R.id.text)
@@ -77,7 +79,7 @@ internal class UIBottomNavigationItemView(context: Context?) : ConstraintLayout(
     fun getItemIndex() = itemIndex
 
 
-    fun setItemTextColor(textColor: Int) {
+    fun setItemTextColor(textColor: ColorStateList) {
         textView.setTextColor(textColor)
     }
 

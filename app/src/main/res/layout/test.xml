@@ -6,16 +6,16 @@
 
     <com.martin.basic.library.widget.navigation.UIBottomNavigationBar
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="55dp"
         android:layout_gravity="bottom"
-        android:background="#918b8b"
+        android:background="#f2f2f2"
         app:navigationDotHeight="12dp"
         app:navigationDotHorizontalBias="0.1"
         app:navigationDotStyle="text"
         app:navigationVerticalChainStyle="spread"
         app:navigationDotVerticalBias="0.6"
         app:navigationDotWidth="28dp"
-        app:navigationMenu="@menu/test_menu"
+        app:navigationMenu="@menu/menu_main_bottom_navigation"
         app:navigationTextColor="@color/second_color"
         app:navigationTextSize="12sp" />
 </FrameLayout>

@@ -39,6 +39,8 @@ class LabelEditText(context: Context?, attrs: AttributeSet?)
         targetRect = RectF()
     }
 
+
+
     private fun initAttrs(context: Context, attrs: AttributeSet) {
         val arrays = context.obtainStyledAttributes(attrs, R.styleable.LabelEditText)
         labelText = arrays.getString(R.styleable.LabelEditText_labelText)

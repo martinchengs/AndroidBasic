@@ -9,9 +9,9 @@
     <com.martin.basic.library.widget.navigation.UIBottomNavigationBar
         android:id="@+id/bottomNavigationBar"
         android:layout_width="match_parent"
-        android:layout_height="82dp"
+        android:layout_height="55dp"
         android:layout_gravity="bottom"
-        android:background="#918b8b"
+        android:background="#ececec"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -19,8 +19,8 @@
         app:navigationDotHorizontalBias="0.1"
         app:navigationDotStyle="text"
         app:navigationDotVerticalBias="0.6"
-        app:navigationDotWidth="28dp"
-        app:navigationMenu="@menu/test_menu"
+        app:navigationDotWidth="18dp"
+        app:navigationMenu="@menu/menu_main_bottom_navigation"
         app:navigationTextColor="@color/bottom_navigation_text_tint"
         app:navigationTextSize="12sp"
         app:navigationVerticalChainStyle="packed" />

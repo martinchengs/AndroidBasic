@@ -4,22 +4,23 @@
 
     <item
         android:id="@+id/menu_home"
-        android:icon="@drawable/maintab_found_normal"
+        android:icon="@drawable/tab_found"
         android:title="首页"
         app:showAsAction="always|always" />
     <item
         android:id="@+id/menu_video"
-        android:icon="@drawable/maintab_crunchies_normal"
+        android:icon="@drawable/tab_crunchies"
         android:title="播播"
         app:showAsAction="always|always" />
     <item
         android:id="@+id/menu_message"
-        android:icon="@drawable/maintab_info_normal"
+        android:icon="@drawable/tab_message"
         android:title="消息"
         app:showAsAction="always|always" />
-    <!--<item-->
-    <!--android:id="@+id/menu_person"-->
-    <!--android:icon="@drawable/maintab_myself_normal"-->
-    <!--android:title="我的"-->
-    <!--app:showAsAction="always|always" />-->
+
+    <item
+    android:id="@+id/menu_person"
+    android:icon="@drawable/tab_myself"
+    android:title="我的"
+    app:showAsAction="always|always" />
 </menu>
